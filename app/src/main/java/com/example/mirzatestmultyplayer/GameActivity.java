@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.shephertz.app42.gaming.multiplayer.client.WarpClient;
+import com.shephertz.app42.gaming.multiplayer.client.command.WarpResponseResultCode;
 import com.shephertz.app42.gaming.multiplayer.client.events.ChatEvent;
 import com.shephertz.app42.gaming.multiplayer.client.events.LiveRoomInfoEvent;
 import com.shephertz.app42.gaming.multiplayer.client.events.LobbyData;
@@ -137,8 +138,12 @@ public class GameActivity extends Activity implements RoomRequestListener, Notif
     }
 
     @Override
-    public void onJoinRoomDone(RoomEvent roomEvent) {
-
+    public void onJoinRoomDone(RoomEvent event) {
+        if(event.getResult()== WarpResponseResultCode.SUCCESS){
+            theClient.subscribeRoom(roomId);
+        }else{
+            Utils.showToastOnUIThread(this, "onJoinRoomDone: Failed "+event.getResult());
+        }
     }
 
     @Override
