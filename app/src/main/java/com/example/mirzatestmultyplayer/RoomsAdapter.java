@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class RoomsAdapter extends BaseAdapter {
 
 	private ArrayList<String> roomIdList = new ArrayList<String>();
+    private ArrayList<String> roomNameList = new ArrayList<String>();
 	private Context context;
 	private RoomsActivity roomsActivity;
 	
@@ -31,7 +32,8 @@ public class RoomsAdapter extends BaseAdapter {
 	public void setData(RoomData[] roomData){
 		roomIdList.clear();
 		for(int i=0;i<roomData.length;i++){
-			roomIdList.add(roomData[i].getName());
+			roomIdList.add(roomData[i].getId());
+            roomNameList.add(roomData[i].getName());
 		}
 		notifyDataSetChanged();
 	}
@@ -58,9 +60,9 @@ public class RoomsAdapter extends BaseAdapter {
             convertView = vi.inflate(R.layout.room_item, null);
         }
         if (roomIdList != null) {
-        	TextView roomId = (TextView) convertView.findViewById(R.id.item_roomId);
+        	TextView roomName = (TextView) convertView.findViewById(R.id.item_roomId);
         	Button joinButton = (Button) convertView.findViewById(R.id.item_joinButton);
-        	roomId.setText(roomIdList.get(position));
+            roomName.setText(roomNameList.get(position));
         	joinButton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {

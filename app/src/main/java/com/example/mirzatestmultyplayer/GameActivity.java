@@ -3,6 +3,8 @@ package com.example.mirzatestmultyplayer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
 import com.shephertz.app42.gaming.multiplayer.client.WarpClient;
 import com.shephertz.app42.gaming.multiplayer.client.command.WarpResponseResultCode;
@@ -16,11 +18,14 @@ import com.shephertz.app42.gaming.multiplayer.client.events.UpdateEvent;
 import com.shephertz.app42.gaming.multiplayer.client.listener.NotifyListener;
 import com.shephertz.app42.gaming.multiplayer.client.listener.RoomRequestListener;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class GameActivity extends Activity implements RoomRequestListener, NotifyListener {
     private WarpClient theClient;
     private String roomId = "";
+    private TextView userJoined;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +35,21 @@ public class GameActivity extends Activity implements RoomRequestListener, Notif
         Intent intent = getIntent();
         roomId = intent.getStringExtra("roomId");
         init(roomId);
+        theClient.sendChat("I'm joining");
 
 	}
 
     private void init(String roomId){
+        try{
+            theClient = WarpClient.getInstance();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         if(theClient!=null){
             theClient.addRoomRequestListener(this);
             theClient.addNotificationListener(this);
             theClient.joinRoom(roomId);
+
         }
     }
 
@@ -58,7 +70,7 @@ public class GameActivity extends Activity implements RoomRequestListener, Notif
     }
 
     @Override
-    public void onUserJoinedRoom(RoomData roomData, String s) {
+    public void onUserJoinedRoom(RoomData roomData, String name) {
 
     }
 
@@ -73,8 +85,14 @@ public class GameActivity extends Activity implements RoomRequestListener, Notif
     }
 
     @Override
-    public void onChatReceived(ChatEvent chatEvent) {
-
+    public void onChatReceived(final ChatEvent event) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                userJoined = (TextView)findViewById(R.id.UserJoinedRoom);
+                userJoined.append(event.getSender()+": "+event.getMessage());
+            }
+        });
     }
 
     @Override
@@ -153,6 +171,8 @@ public class GameActivity extends Activity implements RoomRequestListener, Notif
 
     @Override
     public void onGetLiveRoomInfoDone(LiveRoomInfoEvent liveRoomInfoEvent) {
+
+        Log.d("In the room there are :",""+liveRoomInfoEvent.getJoinedUsers().length+" users");
 
     }
 

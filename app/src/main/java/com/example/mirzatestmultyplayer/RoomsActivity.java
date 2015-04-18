@@ -26,6 +26,7 @@ public class RoomsActivity extends Activity implements ZoneRequestListener {
 	private RoomsAdapter roomsAdapter;
 	private ListView listView;
 	private ProgressDialog progressDialog = null;
+    int roomNumber =0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class RoomsActivity extends Activity implements ZoneRequestListener {
 	public void onStart(){
 		super.onStart();
 		theClient.addZoneRequestListener(this);
-		theClient.getRoomInRange(1, 1);// zemi sobi so eden user
+		theClient.getRoomInRange(0, 5);// zemi sobi so eden user
 	}
 	
 	public void onStop(){
@@ -70,7 +71,8 @@ public class RoomsActivity extends Activity implements ZoneRequestListener {
 		properties.put("topRight", "");
 		properties.put("bottomLeft", "");
 		properties.put("bottomRight", "");*/
-		theClient.createRoom(""+System.currentTimeMillis(), Utils.userName, 4, properties);
+        roomNumber=roomNumber+1;
+		theClient.createRoom("soba: "+roomNumber, Utils.userName, 4, properties);
 	}
 
 	@Override
