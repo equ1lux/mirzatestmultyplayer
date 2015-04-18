@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Mirza\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-404fd8d0edcd3b935f6640abd28cd7d0bab2ec1f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-94b17f001fbfd40a4dcf573eaa1c8e47f30e40c9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\libs\andengine.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b02ca89ca7e112b9c7b96b8be19d72ea8a12e0b1">
+        <dex dex="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\pre-dexed\debug\andengine-bbc48769dc071552ba81cb7c512ce3c96c24e10a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\pre-dexed\debug\classes-34a7091a66d68947c49763c39f81bd62f7906acd.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\libs\App42MultiPlayerGamingSDK.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9db2a3112ef839448d8a3d2b945a91ded6965736">
+        <dex dex="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\pre-dexed\debug\App42MultiPlayerGamingSDK-b8d1995f911be368e48d37e8c698a9cb261675ad.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Mirza\AndroidstudioProjects\mirzatestmultyplayer\app\build\intermediates\pre-dexed\debug\classes-9aa714fbe36bd85af929d0cc74e687befdb757b0.jar" />
+    </item>
+
+</items>
